@@ -1,15 +1,11 @@
 package televisao;
 
-public class ControleRemoto extends Component {
+public class ControleRemoto {
 
 	private Televisao tv;
 
-	public Televisao getTv() {
-		return tv;
-	}
-
-	public void setTv(Televisao tv) {
-		this.tv = tv;
+	public ControleRemoto() {
+		this.tv = new Televisao();
 	}
 
 	public int getCanal() {
