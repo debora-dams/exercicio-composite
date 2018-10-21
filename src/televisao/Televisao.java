@@ -4,9 +4,9 @@ public class Televisao {
 
 	private int canal;
 	private int volume;
-	
+
 	public Televisao() {
-		
+
 	}
 
 	public Televisao(int canal, int volume) {
@@ -14,12 +14,32 @@ public class Televisao {
 		this.volume = volume;
 	}
 
+	public void addCanal() {
+		setCanal(getCanal() + 1);
+	}
+
+	public void addVolume() {
+		setVolume(getVolume() + 1);
+	}
+
 	public int getCanal() {
 		return canal;
 	}
 
 	public void setCanal(int canal) {
-		this.canal = canal;
+		if ((canal < 1) || (canal > 500)) {
+			canal = 1;
+		}
+
+		for (int i = canal; i <= 500; i++) {
+			if (((i % 3) == 0) || ((i % 5) == 0)) {
+				this.canal = i;
+
+				break;
+			}
+		}
+
+		System.out.println("Canal: " + getCanal());
 	}
 
 	public int getVolume() {
@@ -27,7 +47,11 @@ public class Televisao {
 	}
 
 	public void setVolume(int volume) {
-		this.volume = volume;
+		if ((volume >= 0) && (volume <= 50)) {
+			this.volume = volume;
+		}
+
+		System.out.println("Volume: " + getVolume());
 	}
 
 }
