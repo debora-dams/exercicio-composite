@@ -14,14 +14,6 @@ public class Televisao {
 		this.volume = volume;
 	}
 
-	public void addCanal() {
-		setCanal(getCanal() + 1);
-	}
-
-	public void addVolume() {
-		setVolume(getVolume() + 1);
-	}
-
 	public int getCanal() {
 		return canal;
 	}
